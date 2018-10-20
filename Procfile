@@ -1,1 +1,1 @@
-web: gunicorn unspecified.wsgi --log-file - 
+web: gunicorn Spaceapps.wsgi --log-file - 
