@@ -83,7 +83,7 @@ nav {
 
 
 // event listeners
-    document.getElementById('enhance').addEventListener('click',() => {
+    document.getElementById('filter').addEventListener('click',() => {
         let output = '';
 
         for(let i=1; i<=4; i++) {
@@ -91,7 +91,7 @@ nav {
                 <div class="col">
                 <div class="card mb-4" style="width:400px">
                     <img src="media/outputs/Artified_img-${i}.jpg" class="card-img-top"/>
-                    <div class="card-body"><p>yoyoyoyo${i}</p></div>
+                    <div class="card-body"><p>popopo${i}</p></div>
                 </div>
                 </div>
             `;
@@ -99,6 +99,14 @@ nav {
         console.log()
         document.getElementById('django-returns').innerHTML = output;
     });
+
+    document.getElementById('enhance').addEventListener('click', () => {
+            document.getElementById('django-returns').innerHTML = `
+                <div class="card">
+                    <img src="media/outputs/Enhanced_Image.jpg" class="card-img-top"/>
+                </div>
+            `;
+        });
     
        
 

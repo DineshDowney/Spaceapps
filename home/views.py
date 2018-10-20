@@ -4,13 +4,13 @@ import requests
 import random as rn
 from io import BytesIO
 import os
-from Spaceapps.settings import TEMPLATE_DIR as dry
+from Spaceapps.settings import TEMPLATE_DIR as dry,MEDIA_ROOT as mr
 # Create your views here.
 def index(request):
         global d
         d = "https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/MODIS_Terra_CorrectedReflectance_TrueColor/default/2012-07-09/250m/6/"+str(rn.randint(1,39))+"/"+str(rn.randint(1,79))+".jpg"
         manipulate()
-        #enhance()
+        enhance()
         print(dry+"/filters/")
         return render(request,"app.html", {'img':d})
 
@@ -19,11 +19,11 @@ def manipulate():
     img = Image.open(BytesIO(response.content))
     size = img.size
     for y in range(1,5):
-        img2=Image.open(os.path.join(dry,"filters","filter({}).jpg".format(y)))
+        img2=Image.open(os.path.join(mr,"filters","filter({}).jpg".format(y)))
         img2=img2.resize(size, Image.ANTIALIAS)
-        img3=ImageChops.blend(img,img2,alpha=(4/10))
+        img3=ImageChops.blend(img,img2,alpha=(2/10))
         img3=ImageChops.darker(img,img2)
-        img3.save(os.path.join(dry,"outputs","Artified_img-{}.jpg".format(y)))
+        img3.save(os.path.join(mr,"outputs","Artified_img-{}.jpg".format(y)))
 
  
 def enhance():    
@@ -38,4 +38,4 @@ def enhance():
     enhancer = ImageEnhance.Sharpness(img)
     factor=2
     img=enhancer.enhance(factor)
-    img.save("/outputs/Enhanced_Image.jpg")
+    img.save(os.path.join(mr,"outputs","Enhanced_Image.jpg"))
