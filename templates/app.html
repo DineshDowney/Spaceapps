@@ -2,16 +2,25 @@
 
 {% block body %}
 
-<div class="container">
+<div class="wrapper">
+    <div class="controls">
+        <a type="button" class="btn btn-primary text-white" id="upload">Upload Image</a>
+        <a type="button" class="btn btn-success text-white" id="random">Random Image</a>
+        <hr>
+        <a type="button" class="btn btn-primary text-white" id="upload">Enhance</a>
+        <a type="button" class="btn btn-primary text-white" id="upload">Apply Filters</a>
+
+    </div>
+    <div class="output">
     <div class="col">
         <div class="container image-fluid source" id="sourceImage"></div>
     </div>
     <div class="col">
-        <div class="container controls">
-            <a type="button" class="btn btn-primary text-white" id="upload">Upload Image</a>
-            <a type="button" class="btn btn-success text-white" id="random">Random Image</a>
+        <div class="container">
+            
         </div>
     </div>
+</div>
 </div>
 
 {% endblock %}
