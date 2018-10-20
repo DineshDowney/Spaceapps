@@ -56,15 +56,19 @@ nav {
             const upload = document.getElementById('upload');
             document.getElementById('random').addEventListener('click', function () {
 
-                const link = 'https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/MODIS_Terra_CorrectedReflectance_TrueColor/default/2012-07-09/250m/6/13/37.jpg';
+                const link = 'https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/MODIS_Terra_CorrectedReflectance_TrueColor/default/2012-07-09/250m/6/';
 
-                const r = Math.random()
+                const r = Math.floor(Math.random() * 39);
+                const c = Math.floor(Math.random() * 79);
                 // random number
                 document.getElementById('sourceImage').innerHTML = `
-        <img src="${link}"/>
+        <img src="${link}${r}/${c}.jpg"/>
     `;
             });
-        
+
+
+// event listeners
+       
 
     </script>
 </body>
