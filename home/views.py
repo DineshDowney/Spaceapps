@@ -5,6 +5,13 @@ def index(request):
     return render(request,"app.html")
 
 def manipulate():
+#         from PIL import Image
+# import requests
+# from io import BytesIO
+
+# response = requests.get(url)
+# img = Image.open(BytesIO(response.content))
+
     img=Image.open("demoimg.jpg")
     size = img.size
     for y in range(1,5):
