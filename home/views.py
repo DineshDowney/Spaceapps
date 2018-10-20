@@ -17,7 +17,7 @@ def manipulate(url):
         img3=ImageChops.darker()
         img3.save("outputs/Artified_img-{}.jpg".format(y))
  
-def enhance():    
+def enhance(url):    
     response = requests.get(url)
     img = Image.open(BytesIO(response.content))
     enhancer = ImageEnhance.Color(img)
