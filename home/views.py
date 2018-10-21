@@ -18,7 +18,7 @@ def manipulate():
     response = requests.get(d)
     img = Image.open(BytesIO(response.content))
     size = img.size
-    for y in range(1,5):
+    for y in range(1,10):
         img2=Image.open(os.path.join(mr,"filters","filter({}).jpg".format(y)))
         img2=img2.resize(size, Image.ANTIALIAS)
         img3=ImageChops.blend(img,img2,alpha=(2/10))
