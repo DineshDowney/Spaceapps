@@ -17,11 +17,6 @@
 
     {% endblock %}
     <style>
-        
-nav {
-    position: fixed;
-    z-index: 2;
-}
 
 .wrapper {
     display: grid;
@@ -30,8 +25,8 @@ nav {
 
 
 .source {
-    width: 500px;
-    height: 500px;
+    width: 400px;
+    height: 400px;
     margin: 0 auto;
     overflow: hidden;
     /* background: repeating-linear-gradient(60deg, white, red, white, red); */
@@ -65,7 +60,7 @@ nav {
 
 .output{
     margin-left: 210px;
-    width:70%;
+    margin-top:60px;
 }
 .col{
     margin:0 auto;
@@ -104,9 +99,9 @@ nav {
         for(let i=1; i<=6; i++) {
             output+= `
                 <div class="col">
-                <div class="card mb-4" style="width:400px">
+                <div class="card mb-4" style="width:320px">
                     <img src="media/outputs/Artified_img-${i}.jpg" class="card-img-top"/>
-                    <div class="card-body"><p>popopo${i}</p></div>
+                    <div class="card-body"><p>Filter ${i}</p></div>
                 </div>
                 </div>
             `;
