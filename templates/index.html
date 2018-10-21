@@ -19,7 +19,8 @@
     <style>
         
 nav {
-    text-align: center;
+    position: fixed;
+    z-index: 2;
 }
 
 .wrapper {
@@ -41,10 +42,17 @@ nav {
 }
 
 .controls {
-        padding: 20px;
+    position: fixed;
+    width:200px;
+    height: 100%;
+    top:0px;
+    left:0px;
     background: #f2f2f2;
     display: block;
     box-shadow: 1px 2px 1px rgba(0,0,0,0.6);
+}
+.options{
+    margin-top:80px;
 }
 
 .controls a {
@@ -55,6 +63,13 @@ nav {
     /* box-shadow: 1px 2px 1px rgba(0,0,0,0.6); */
 }
 
+.output{
+    margin-left: 210px;
+    width:70%;
+}
+.col{
+    margin:0 auto;
+}
 #django-returns {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -86,7 +101,7 @@ nav {
     document.getElementById('filter').addEventListener('click',() => {
         let output = '';
 
-        for(let i=1; i<=4; i++) {
+        for(let i=1; i<=6; i++) {
             output+= `
                 <div class="col">
                 <div class="card mb-4" style="width:400px">
