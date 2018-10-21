@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from PIL import Image,ImageEnhance,ImageChops
 import requests
-import random as rn
+import numpy.random as rn
 from io import BytesIO
 import os
 from Spaceapps.settings import TEMPLATE_DIR as dry,MEDIA_ROOT as mr
@@ -18,7 +18,7 @@ def manipulate():
     response = requests.get(d)
     img = Image.open(BytesIO(response.content))
     size = img.size
-    for y in range(1,7):
+    for y in range(1,5):
         img2=Image.open(os.path.join(mr,"filters","filter({}).jpg".format(y)))
         img2=img2.resize(size, Image.ANTIALIAS)
         img3=ImageChops.blend(img,img2,alpha=(2/10))
@@ -39,3 +39,8 @@ def enhance():
     factor=2
     img=enhancer.enhance(factor)
     img.save(os.path.join(mr,"outputs","Enhanced_Image.jpg"))
+
+def reverse(url):
+        search_url='https://images.google.com/searchbyimage?image_url='
+        url=search_url+url
+        response = requests.get(url)
