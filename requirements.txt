@@ -11,5 +11,5 @@ virtualenv-clone==0.3.0
 cffi==1.11.5
 pipenv==2018.7.1
 pycparser==2.18
-requests==2.19.1
+requests==2.20.0
 numpy==1.15.1
