@@ -8,3 +8,9 @@
 [https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/MODIS_Terra_CorrectedReflectance_TrueColor/default/2012-07-09/250m/6/30/28.jpg](https://gibs.earthdata.nasa.gov/wmts/epsg4326/best/MODIS_Terra_CorrectedReflectance_TrueColor/default/2012-07-09/250m/6/30/28.jpg)
 
 Note: You can change the Date and other parameters next to date, to get images.
+
+## Technologies used:
+
+* Django
+* HTML/CSS
+* JavaScript
