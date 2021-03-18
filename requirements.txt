@@ -1,6 +1,6 @@
 certifi==2018.4.16
 Django==2.1.2
-Pillow==5.2.0
+Pillow==8.1.1
 pytz==2018.5
 wincertstore==0.2
 gunicorn==19.6.0
