@@ -1,5 +1,5 @@
 certifi==2018.4.16
-Django==2.1.2
+Django==2.2.24
 Pillow==5.2.0
 pytz==2018.5
 wincertstore==0.2
